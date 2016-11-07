@@ -4,7 +4,7 @@
 <tsung loglevel="notice" dumptraffic="true" version="1.0">
 
 <clients>
-    <client host="localhost" use_controller_vm="true" maxusers="5000" weight="2" />
+    <client host="127.0.0.1" use_controller_vm="true" maxusers="5000" weight="2" />
 </clients>
 
 <servers>
@@ -18,7 +18,6 @@
 </load>
 
   <!-- JABBER parameters -->
-  <!-- to synchronise users,  use a global acknoledgement -->
   <options>
     <option type="ts_jabber" name="muc_service" value="conference.localhost"/>
 
@@ -52,7 +51,7 @@
     </transaction>
 
     <thinktime value="2"></thinktime>
-    <!-- send prensence -->
+    <!-- send presence -->
 
     <request><jabber type="presence:initial" ack="no_ack"/></request>
 
@@ -60,7 +59,7 @@
       <request> <jabber type="iq:roster:get" ack="local"></jabber></request>
     </transaction>
 
-    <!-- join the room -->
+    <!-- join room -->
     <setdynvars sourcetype="value" value="4825a44b95-4825b44b95">
       <var name="room" />
     </setdynvars>
@@ -69,7 +68,7 @@
     </request>
     <thinktime value="10"/>
 
-    <!-- send 10 messages to the rooom -->
+    <!-- send 10 messages to the room -->
     <for from="1" to="10">
       <request subst="true"><jabber type="muc:chat" ack="local" room="%%_room%%"/></request>
       <thinktime value="5"/>
@@ -83,3 +82,4 @@
   </session>
 </sessions>
 </tsung>
+
