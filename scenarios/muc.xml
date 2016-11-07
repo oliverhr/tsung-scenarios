@@ -51,8 +51,8 @@
     </transaction>
 
     <thinktime value="2"></thinktime>
-    <!-- send presence -->
 
+    <!-- send presence -->
     <request><jabber type="presence:initial" ack="no_ack"/></request>
 
     <transaction name="roster">
