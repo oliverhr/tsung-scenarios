@@ -16,7 +16,7 @@ Load succefully connect each iteration to the server, but seems that users it ca
 **Notes**
 
 - I had a problem with option file_server if fileId differ from filename Tsung trows and error seems solved
-- I thing the problem is that tsung is ommiting the CSV file to get Username and Password or at least it gets Troubles parsing then file contents.
+- I think the problem is that tsung is ommiting the CSV file to get Username and Password or at least it gets Troubles parsing then file contents.
 
 I tried using as filed separator on CSV file `comma` and `semicolon`, `single` and `double` quotes and without them for strings but I get the same results.
 
